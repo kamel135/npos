@@ -1,0 +1,602 @@
+@import "./assets/Inter/inter.css";
+@import "frappe-ui/src/style.css";
+@import "@abdulrysr/saudi-riyal-new-symbol-font/style.css";
+
+/* ========================================
+   INTOUCH POS - Header & Control Buttons
+   Touch-Optimized (48px+ targets)
+   ======================================== */
+
+/* Header Control Buttons - Touch Friendly */
+.header-btn-intouch {
+	border-radius: 0.75rem;
+	font-weight: 600;
+	transition: all 0.2s;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	border: 2px solid transparent;
+	min-height: 48px;
+	min-width: 48px;
+	padding: 0.75rem 1rem;
+	font-size: 0.9375rem; /* 15px */
+	cursor: pointer;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.header-btn-intouch.primary {
+	background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+	color: white;
+	border-color: #0369a1;
+}
+
+.header-btn-intouch.primary:hover {
+	background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+	box-shadow: 0 4px 8px rgba(14, 165, 233, 0.3);
+}
+
+.header-btn-intouch.secondary {
+	background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+	color: white;
+	border-color: #334155;
+}
+
+.header-btn-intouch.secondary:hover {
+	background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+	box-shadow: 0 4px 8px rgba(100, 116, 139, 0.3);
+}
+
+.header-btn-intouch.light {
+	background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+	color: #1f2937;
+	border-color: #9ca3af;
+}
+
+.header-btn-intouch.light:hover {
+	background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+	box-shadow: 0 4px 8px rgba(156, 163, 175, 0.3);
+}
+
+.header-btn-intouch.danger {
+	background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+	color: white;
+	border-color: #b91c1c;
+}
+
+.header-btn-intouch.danger:hover {
+	background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+	box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+.header-btn-intouch:active {
+	transform: scale(0.97);
+}
+
+/* Circular Control Buttons - Touch Optimized */
+.ctrl-btn-intouch {
+	width: 5rem; /* 80px - larger for touch */
+	height: 5rem;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	transition: all 0.2s;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+	border: 3px solid transparent;
+	cursor: pointer;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	gap: 0.25rem;
+}
+
+.ctrl-btn-intouch.hold {
+	background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+	color: white;
+	border-color: #047857;
+}
+
+.ctrl-btn-intouch.hold:hover {
+	background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+	box-shadow: 0 6px 12px rgba(16, 185, 129, 0.4);
+}
+
+.ctrl-btn-intouch.danger {
+	background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+	color: white;
+	border-color: #b91c1c;
+}
+
+.ctrl-btn-intouch.danger:hover {
+	background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+	box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+}
+
+.ctrl-btn-intouch:active {
+	transform: scale(0.92);
+}
+
+/* ========================================
+   POS COLOR SYSTEM - Light & Dark Mode Support
+   Touch-Optimized with High Contrast (≥4.5:1)
+   ======================================== */
+:root {
+	/* Product Colors - Light Mode */
+	--product-bg: #ffffff;
+	--product-border: #e0e0e0;
+	--product-hover-bg: #f5f5f5;
+	--product-hover-border: #bdbdbd;
+	--product-selected-bg: #fff3e0;
+	--product-selected-border: #ff9800;
+	--product-text: #1a1a1a; /* Darker for better contrast */
+
+	/* Numpad Colors */
+	--numpad-bg: #616161;
+	--numpad-btn: #ffffff;
+	--numpad-display: #424242;
+	--numpad-text: #00e676;
+
+	/* Control Button Colors */
+	--hold-green: #4caf50;
+	--hold-green-hover: #45a049;
+	--cancel-red: #f44336;
+	--cancel-red-hover: #da190b;
+	--time-blue: #2196f3;
+	--time-blue-hover: #0b7dda;
+
+	/* Category Colors - Pleasant & Varied */
+	--category-1: #9c27b0;
+	/* Purple */
+	--category-2: #2196f3;
+	/* Blue */
+	--category-3: #4caf50;
+	/* Green */
+	--category-4: #ff9800;
+	/* Orange */
+	--category-5: #f44336;
+	/* Red */
+	--category-6: #00bcd4;
+	/* Cyan */
+
+	/* Background Colors */
+	--bg-light: #fafafa;
+	--bg-medium: #f5f5f5;
+	--border-light: #e0e0e0;
+	--border-medium: #bdbdbd;
+
+	/* Comment/Note Colors */
+	--comment-bg: #fff9c4;
+	--comment-border: #fbc02d;
+	--comment-text: #f57f17;
+	
+	/* Text Contrast Levels */
+	--text-high-contrast: #1a1a1a;
+	--text-medium-contrast: #4a4a4a;
+	--text-low-contrast: #757575;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] {
+	/* Product Colors - Dark Mode */
+	--product-bg: #2d2d2d;
+	--product-border: #404040;
+	--product-hover-bg: #3a3a3a;
+	--product-hover-border: #555555;
+	--product-selected-bg: #4a3800;
+	--product-selected-border: #ff9800;
+	--product-text: #e8e8e8;
+	
+	/* Numpad Colors - Dark */
+	--numpad-bg: #1a1a1a;
+	--numpad-btn: #3a3a3a;
+	--numpad-display: #2d2d2d;
+	--numpad-text: #00e676;
+	
+	/* Background Colors - Dark */
+	--bg-light: #1a1a1a;
+	--bg-medium: #2d2d2d;
+	--border-light: #404040;
+	--border-medium: #555555;
+	
+	/* Text Contrast - Dark Mode */
+	--text-high-contrast: #f5f5f5;
+	--text-medium-contrast: #bdbdbd;
+	--text-low-contrast: #9e9e9e;
+	
+	/* Comment Colors - Dark */
+	--comment-bg: #3a2f00;
+	--comment-border: #fbc02d;
+	--comment-text: #ffeb3b;
+}
+
+/* ========================================
+   PRODUCT BUTTON STYLES - Clean & Neutral
+   ======================================== */
+.product-btn-clean {
+	background: var(--product-bg);
+	color: var(--product-text);
+	padding: 1rem;
+	border-radius: 1rem;
+	border: 2px solid var(--product-border);
+	font-size: 0.9375rem;
+	font-weight: 600;
+	min-height: 140px; /* Increased for better touch */
+	min-width: 120px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+}
+
+.product-btn-clean:hover {
+	transform: translateY(-2px);
+	background: var(--product-hover-bg);
+	border-color: var(--product-hover-border);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+@media (hover: none) {
+	/* On touch devices, don't use hover effects */
+	.product-btn-clean:hover {
+		transform: none;
+	}
+}
+
+.product-btn-clean:active {
+	transform: scale(0.97);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.product-btn-clean.selected {
+	background: var(--product-selected-bg);
+	border-color: var(--product-selected-border);
+	box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
+}
+
+/* Apply Saudi Riyal symbol font to body for currency support */
+body {
+	font-family: "SaudiRiyalSymbol", "Inter", sans-serif;
+}
+
+/* Ensure all text elements inherit the font stack with Saudi Riyal support */
+* {
+	font-family: inherit;
+}
+
+/* ========================================
+   ARABIC FONT SUPPORT
+   ======================================== */
+/* Better Arabic font rendering */
+[lang="ar"],
+[dir="rtl"],
+.arabic-text {
+	font-family: "Cairo", "Tajawal", "Segoe UI", "SaudiRiyalSymbol", "Inter", sans-serif;
+	font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* Ensure frappe-ui dialogs render above sticky mobile navigation */
+.dialog-overlay {
+	z-index: 400 !important;
+}
+
+.dialog-overlay .dialog-content,
+.dialog-content {
+	z-index: 500 !important;
+}
+
+/* Mobile touch optimizations - removes 300ms tap delay and improves scrolling */
+.touch-manipulation {
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Apply touch-action to all interactive elements */
+button,
+a,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+.cursor-pointer {
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Optimized button touch animations - prevents layout thrashing */
+.btn-touch {
+	transition: transform 0.1s ease;
+	will-change: transform;
+}
+
+.btn-touch:active {
+	transform: scale(0.95);
+}
+
+/* Override Tailwind's active:scale-95 with optimized version */
+button.active\:scale-95:active,
+.active\:scale-95:active {
+	transform: scale(0.95);
+	will-change: transform;
+}
+
+/* ========================================
+   RTL SUPPORT
+   ======================================== */
+/* RTL Support: Fix frappe-ui TextInput prefix/suffix positioning */
+[dir="rtl"] .relative>div.absolute.left-0 {
+	left: auto !important;
+	right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0.5rem !important;
+}
+
+[dir="rtl"] .relative>div.absolute.right-0 {
+	right: auto !important;
+	left: 0 !important;
+	padding-right: 0 !important;
+	padding-left: 0.5rem !important;
+}
+
+/* RTL Support: Swap input padding for prefix/suffix in TextInput */
+[dir="rtl"] .relative>input.pl-8 {
+	padding-left: 0.5rem !important;
+	padding-right: 2rem !important;
+}
+
+[dir="rtl"] .relative>input.pr-8 {
+	padding-right: 0.5rem !important;
+	padding-left: 2rem !important;
+}
+
+[dir="rtl"] .relative>input.pl-9 {
+	padding-left: 0.625rem !important;
+	padding-right: 2.25rem !important;
+}
+
+[dir="rtl"] .relative>input.pr-9 {
+	padding-right: 0.625rem !important;
+	padding-left: 2.25rem !important;
+}
+
+[dir="rtl"] .relative>input.pl-10 {
+	padding-left: 0.75rem !important;
+	padding-right: 2.5rem !important;
+}
+
+[dir="rtl"] .relative>input.pr-10 {
+	padding-right: 0.75rem !important;
+	padding-left: 2.5rem !important;
+}
+
+/* ========================================
+   IN TOUCH POS CUSTOM STYLES - Modern & Attractive
+   ======================================== */
+
+:root {
+	/* Modern Color Palette - Inspired by the screenshots */
+	--intouch-primary-blue: #0ea5e9; /* Sky blue */
+	--intouch-hover-blue: #0284c7; /* Darker sky blue */
+	--intouch-dark-blue: #0369a1; /* Deep blue */
+	--intouch-light-blue: #bae6fd; /* Light blue */
+	--intouch-gray: #6b7280; /* Cool gray */
+	--intouch-dark-gray: #374151; /* Dark gray */
+	--intouch-light-gray: #f3f4f6; /* Very light gray */
+	--intouch-border: #e5e7eb; /* Border gray */
+	--intouch-red: #ef4444; /* Bright red */
+	--intouch-green: #10b981; /* Emerald green */
+	--intouch-orange: #f97316; /* Vibrant orange */
+	--intouch-numpad-bg: #374151; /* Dark gray for numpad background */
+	--intouch-numpad-btn: #f9fafb; /* Light button */
+	--intouch-numpad-display: #1f2937; /* Very dark gray for display */
+	--intouch-numpad-text: #10b981; /* Green text for display */
+}
+
+/* Product Grid Button Style - Large Blue Buttons */
+.product-btn-intouch {
+	background: linear-gradient(135deg, var(--intouch-primary-blue) 0%, var(--intouch-hover-blue) 100%);
+	color: white;
+	padding: 0.75rem 0.5rem;
+	border-radius: 6px;
+	border: none;
+	font-size: 0.875rem;
+	font-weight: bold;
+	min-height: 75px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25rem;
+	cursor: pointer;
+	transition: all 0.15s ease;
+	box-shadow: 0 2px 6px rgba(14, 165, 233, 0.3);
+	text-align: center;
+}
+
+.product-btn-intouch:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+	background: linear-gradient(135deg, var(--intouch-hover-blue) 0%, var(--intouch-dark-blue) 100%);
+}
+
+.product-btn-intouch:active {
+	transform: scale(0.98) translateY(0);
+	box-shadow: 0 2px 4px rgba(14, 165, 233, 0.3);
+}
+
+/* Numpad Display Style - Dark Display with Green Text */
+.numpad-display-intouch {
+	background: var(--intouch-numpad-display);
+	color: var(--intouch-numpad-text);
+	padding: 1rem 1.5rem;
+	text-align: center;
+	font-size: 1.8rem;
+	font-family: 'Courier New', monospace;
+	font-weight: bold;
+	border-radius: 8px;
+	border: 2px solid var(--intouch-dark-gray);
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+	min-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Numpad Button Style - Clean White Buttons */
+.numpad-btn-intouch {
+	background: var(--intouch-numpad-btn);
+	border: 2px solid var(--intouch-border);
+	padding: 1.2rem;
+	font-size: 1.3rem;
+	font-weight: bold;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.15s ease;
+	min-height: 60px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+	color: var(--intouch-dark-gray);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.numpad-btn-intouch:hover {
+	background: white;
+	border-color: var(--intouch-primary-blue);
+	transform: translateY(-1px);
+	box-shadow: 0 3px 8px rgba(14, 165, 233, 0.2);
+}
+
+.numpad-btn-intouch:active {
+	transform: scale(0.97) translateY(0);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Control Buttons - Circular Action Buttons */
+.ctrl-btn-intouch {
+	padding: 0.8rem;
+	border-radius: 50%;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.15s ease;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+	width: 56px;
+	height: 56px;
+}
+
+.ctrl-btn-intouch:hover {
+	transform: translateY(-2px) scale(1.05);
+	box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ctrl-btn-intouch:active {
+	transform: scale(0.93);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus states for accessibility */
+.header-btn-intouch:focus-visible,
+.ctrl-btn-intouch:focus-visible {
+	outline: 3px solid #3b82f6;
+	outline-offset: 2px;
+}
+
+.ctrl-btn-intouch.hold {
+	background: var(--intouch-green);
+	color: white;
+}
+
+.ctrl-btn-intouch.danger {
+	background: var(--intouch-red);
+	color: white;
+}
+
+.ctrl-btn-intouch.primary {
+	background: var(--intouch-primary-blue);
+	color: white;
+}
+
+/* Side Category Buttons - Bottom Category Bar */
+.category-btn-intouch {
+	padding: 0.75rem 1rem;
+	border: none;
+	color: white;
+	font-weight: bold;
+	font-size: 0.85rem;
+	cursor: pointer;
+	border-radius: 6px;
+	transition: all 0.15s ease;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+	white-space: nowrap;
+	text-align: center;
+}
+
+.category-btn-intouch:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+	opacity: 0.95;
+}
+
+.category-btn-intouch:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.category-btn-intouch.active {
+	box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+}
+
+/* Header Control Buttons - Top Bar Buttons */
+.header-btn-intouch {
+	padding: 0.6rem 1rem;
+	border-radius: 6px;
+	border: none;
+	font-weight: bold;
+	font-size: 0.75rem;
+	cursor: pointer;
+	transition: all 0.15s ease;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+	white-space: nowrap;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.header-btn-intouch:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.header-btn-intouch:active {
+	transform: scale(0.97);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.header-btn-intouch.primary {
+	background: var(--intouch-primary-blue);
+	color: white;
+}
+
+.header-btn-intouch.secondary {
+	background: var(--intouch-gray);
+	color: white;
+}
+
+.header-btn-intouch.danger {
+	background: var(--intouch-red);
+	color: white;
+}
+
+.header-btn-intouch.light {
+	background: white;
+	color: var(--intouch-dark-gray);
+	border: 2px solid var(--intouch-border);
+}

@@ -1,0 +1,7 @@
+# Frappe/ERPNext App Requirements
+# List any external Python libraries required by your app here.
+# Standard libraries (json, datetime, etc.) and Frappe dependencies (requests, pytz) do not need to be listed.
+
+# Example:
+# pandas
+# numpy

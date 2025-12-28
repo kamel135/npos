@@ -1,0 +1,21 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include pos_next *.css
+recursive-include pos_next *.csv
+recursive-include pos_next *.html
+recursive-include pos_next *.ico
+recursive-include pos_next *.js
+recursive-include pos_next *.json
+recursive-include pos_next *.md
+recursive-include pos_next *.png
+recursive-include pos_next *.py
+recursive-include pos_next *.svg
+recursive-include pos_next *.txt
+recursive-include pos_next *.vue
+recursive-include pos_next/public *
+recursive-include pos_next/templates *
+recursive-include pos_next/www *
